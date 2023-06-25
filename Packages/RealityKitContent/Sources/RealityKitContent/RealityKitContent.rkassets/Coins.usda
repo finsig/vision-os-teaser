@@ -1,0 +1,233 @@
+#usda 1.0
+(
+    defaultPrim = "Chain"
+    metersPerUnit = 1
+    upAxis = "Y"
+)
+
+def Xform "Chain" (
+    active = true
+)
+{
+    reorder nameChildren = ["Coin_top", "Coin_top_left", "Coin_top_right", "Coin_botttom", "Coin_bottom_left", "Coin_bottom_right"]
+    float3 xformOp:scale = (1, 1, 1)
+    float3 xformOp:translate = (6.9849193e-10, 0, 0)
+    uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+    def Cylinder "Coin_botttom" (
+        active = true
+        prepend apiSchemas = ["MaterialBindingAPI"]
+        customData = {
+            float3 rotationEulerHint = (0, 0, 0)
+        }
+    )
+    {
+        uniform token axis = "Y"
+        double height = 0.02
+        rel material:binding = </Chain/Coin_botttom/DefaultMaterial>
+        double radius = 0.05
+        quatf xformOp:orient = (1, 0, 0, 0)
+        float3 xformOp:scale = (0.49999982, 0.49999982, 0.49999982)
+        float3 xformOp:translate = (0.00003684438, 0.029999996, -0.0020769523)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+        def Material "DefaultMaterial"
+        {
+            token outputs:mtlx:surface
+            token outputs:realitykit:vertex
+            prepend token outputs:surface.connect = </Chain/Coin_botttom/DefaultMaterial/DefaultSurfaceShader.outputs:surface>
+
+            def Shader "DefaultSurfaceShader"
+            {
+                uniform token info:id = "UsdPreviewSurface"
+                color3f inputs:diffuseColor = (0.9019608, 0, 0.47843137) (
+                    colorSpace = "Input - Texture - Linear - sRGB"
+                )
+                color3f inputs:diffuseColor.connect = None
+                float inputs:roughness = 0.75
+                token outputs:surface
+            }
+        }
+    }
+
+    def Cylinder "Coin_top" (
+        active = true
+        prepend apiSchemas = ["MaterialBindingAPI"]
+        customData = {
+            float3 rotationEulerHint = (0, 0, 0)
+        }
+    )
+    {
+        uniform token axis = "Y"
+        double height = 0.02
+        rel material:binding = </Chain/Coin_top/DefaultMaterial>
+        double radius = 0.05
+        quatf xformOp:orient = (1, 0, 0, 0)
+        float3 xformOp:scale = (0.49999982, 0.49999982, 0.49999982)
+        float3 xformOp:translate = (0, 0.16999997, 0)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+        def Material "DefaultMaterial"
+        {
+            token outputs:mtlx:surface
+            token outputs:realitykit:vertex
+            prepend token outputs:surface.connect = </Chain/Coin_top/DefaultMaterial/DefaultSurfaceShader.outputs:surface>
+
+            def Shader "DefaultSurfaceShader"
+            {
+                uniform token info:id = "UsdPreviewSurface"
+                color3f inputs:diffuseColor = (0.9019608, 0, 0.47843137) (
+                    colorSpace = "Input - Texture - Linear - sRGB"
+                )
+                color3f inputs:diffuseColor.connect = None
+                float inputs:roughness = 0.75
+                token outputs:surface
+            }
+        }
+    }
+
+    def Cylinder "Coin_top_left" (
+        active = true
+        prepend apiSchemas = ["MaterialBindingAPI"]
+        customData = {
+            float3 rotationEulerHint = (0, 0, 1.0471975)
+        }
+    )
+    {
+        uniform token axis = "Y"
+        double height = 0.02
+        rel material:binding = </Chain/Coin_top_left/DefaultMaterial>
+        double radius = 0.05
+        quatf xformOp:orient = (0.86602545, 0, 0, 0.49999982)
+        float3 xformOp:scale = (0.49999973, 0.49999973, 0.4999998)
+        float3 xformOp:translate = (-0.049999993, 0.13659997, 0)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+        def Material "DefaultMaterial"
+        {
+            token outputs:mtlx:surface
+            token outputs:realitykit:vertex
+            prepend token outputs:surface.connect = </Chain/Coin_top_left/DefaultMaterial/DefaultSurfaceShader.outputs:surface>
+
+            def Shader "DefaultSurfaceShader"
+            {
+                uniform token info:id = "UsdPreviewSurface"
+                color3f inputs:diffuseColor = (0.9019608, 0, 0.47843137) (
+                    colorSpace = "Input - Texture - Linear - sRGB"
+                )
+                color3f inputs:diffuseColor.connect = None
+                float inputs:roughness = 0.75
+                token outputs:surface
+            }
+        }
+    }
+
+    def Cylinder "Coin_top_right" (
+        active = true
+        prepend apiSchemas = ["MaterialBindingAPI"]
+        customData = {
+            float3 rotationEulerHint = (0, 0, -1.0471975)
+        }
+    )
+    {
+        uniform token axis = "Y"
+        double height = 0.02
+        rel material:binding = </Chain/Coin_top_right/DefaultMaterial>
+        double radius = 0.05
+        quatf xformOp:orient = (0.8660254, 0, 0, -0.49999994)
+        float3 xformOp:scale = (0.49999967, 0.49999967, 0.49999976)
+        float3 xformOp:translate = (0.049999993, 0.13659997, 0)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+        def Material "DefaultMaterial"
+        {
+            token outputs:mtlx:surface
+            token outputs:realitykit:vertex
+            prepend token outputs:surface.connect = </Chain/Coin_top_right/DefaultMaterial/DefaultSurfaceShader.outputs:surface>
+
+            def Shader "DefaultSurfaceShader"
+            {
+                uniform token info:id = "UsdPreviewSurface"
+                color3f inputs:diffuseColor = (0.9019608, 0, 0.47843137) (
+                    colorSpace = "Input - Texture - Linear - sRGB"
+                )
+                color3f inputs:diffuseColor.connect = None
+                float inputs:roughness = 0.75
+                token outputs:surface
+            }
+        }
+    }
+
+    def Cylinder "Coin_bottom_left" (
+        active = true
+        prepend apiSchemas = ["MaterialBindingAPI"]
+        customData = {
+            float3 rotationEulerHint = (0, 0, -1.0471975)
+        }
+    )
+    {
+        uniform token axis = "Y"
+        double height = 0.02
+        rel material:binding = </Chain/Coin_bottom_left/DefaultMaterial>
+        double radius = 0.05
+        quatf xformOp:orient = (0.8660254, 0, 0, -0.49999994)
+        float3 xformOp:scale = (0.49999967, 0.49999967, 0.49999976)
+        float3 xformOp:translate = (-0.04999999, 0.063399985, 0)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+        def Material "DefaultMaterial"
+        {
+            token outputs:mtlx:surface
+            token outputs:realitykit:vertex
+            prepend token outputs:surface.connect = </Chain/Coin_bottom_left/DefaultMaterial/DefaultSurfaceShader.outputs:surface>
+
+            def Shader "DefaultSurfaceShader"
+            {
+                uniform token info:id = "UsdPreviewSurface"
+                color3f inputs:diffuseColor = (0.9019608, 0, 0.47843137) (
+                    colorSpace = "Input - Texture - Linear - sRGB"
+                )
+                color3f inputs:diffuseColor.connect = None
+                float inputs:roughness = 0.75
+                token outputs:surface
+            }
+        }
+    }
+
+    def Cylinder "Coin_bottom_right" (
+        active = true
+        prepend apiSchemas = ["MaterialBindingAPI"]
+        customData = {
+            float3 rotationEulerHint = (0, 0, 1.0471975)
+        }
+    )
+    {
+        uniform token axis = "Y"
+        double height = 0.02
+        rel material:binding = </Chain/Coin_bottom_right/DefaultMaterial>
+        double radius = 0.05
+        quatf xformOp:orient = (0.8660254, 0, 0, 0.4999999)
+        float3 xformOp:scale = (0.4999996, 0.4999996, 0.49999973)
+        float3 xformOp:translate = (0.049999993, 0.06339998, 0)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+        def Material "DefaultMaterial"
+        {
+            token outputs:mtlx:surface
+            token outputs:realitykit:vertex
+            prepend token outputs:surface.connect = </Chain/Coin_bottom_right/DefaultMaterial/DefaultSurfaceShader.outputs:surface>
+
+            def Shader "DefaultSurfaceShader"
+            {
+                uniform token info:id = "UsdPreviewSurface"
+                color3f inputs:diffuseColor = (0.9019608, 0, 0.47843137) (
+                    colorSpace = "Input - Texture - Linear - sRGB"
+                )
+                color3f inputs:diffuseColor.connect = None
+                float inputs:roughness = 0.75
+                token outputs:surface
+            }
+        }
+    }
+}
+
